@@ -1,0 +1,26 @@
+main{
+    background-color: rgb(249, 250, 188);
+    border: 3px solid #942909;
+    padding: 20px;
+    width: 500px;
+}
+
+img{
+    border: 5px solid orange;
+    width: 400px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+div{
+    max-width: 400px;
+    max-height: 100px;
+    overflow-y: scroll;
+    border: 5px dashed orange;
+    background-color: yellow;
+    padding: 0 5px;
+}
+span{
+    text-decoration: underline;
+    font-weight: bold;
+}

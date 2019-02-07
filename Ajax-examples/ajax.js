@@ -11,8 +11,12 @@ document.addEventListener("DOMContentLoaded", () =>{
     jokeButton.addEventListener("click", () => {
         console.log("3")   
 
-        let jokeText = getJoke();
-        joke.textContent = jokeText;
+        // let jokeText = getJoke();
+
+        getJoke(text => {
+            // this code runs when the request returns successfully
+            joke.innerHTML = jokeText;
+        });
         
     });
     
@@ -23,7 +27,7 @@ console.log("5");
 
 // debugger runs -> console prints 15243
 
-function getJoke(){
+function getJoke(onSuccess, onFailure){
     // this object is provided by the browser to let us do AJAX
     // AJAX stands for Asynchronous JavaScript and XML
     // what the name means in practice is HTTP requests via JavaScript
@@ -38,9 +42,31 @@ function getJoke(){
             console.log(responseJSON);
 
             // HTTP response status 200-299 indicates success
+            // responseJSON should contain the data requested
             if(xhr.status >= 200 && xhr.status < 300){
+                console.log("success");
+            
+                // JSON.parse to deserialize JSON
+                // JSON.stringify to serialize JSON
 
+                let responseObj = JSON.parse(responseJSON);
+                let text = responseObj.value.joke;
+                onSuccess(text);
             }
+            else[
+                // some kind of error (e.g. 404 file not found)
+                // responseJSON should contain details about error
+                console.log("failure");
+                if (onFailure() !== undefined)
+                    onFailure(responseJSON);
+                
+            ]
         }
-    })
+    });
+
+    // set up the request to be made
+    xhr.open('get', 'http://api.icndb.com/jokes/random/')
+
+    // send the request
+    xhr.send();
 }

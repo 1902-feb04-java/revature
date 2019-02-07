@@ -1,8 +1,11 @@
 "use strict"
 
-
 var username = document.getElementById("user");
 var password = document.getElementById("password");
+
+window.addEventListener('submit', () =>{
+    validateForm(this);
+})
 
 function validateForm(form){
 
@@ -10,7 +13,7 @@ function validateForm(form){
 
     if(!validatePassword(form.password.value)) {
         
-        alert("The password you have entered is not valid!");
+        console.log("The password you have entered is not valid!");
         document.getElementById("message").style.display = "block";
         form.password.focus();
         return false;

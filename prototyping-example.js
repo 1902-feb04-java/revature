@@ -1,35 +1,20 @@
 // Apple function - prototyping
 
-function apple(color, weight){
-    
+function Apple(color, weight){
+    this.color = color;
+    this.weight = weight;
+};
+
+var apple1 = new Apple("red", "5oz");
+var apple2 = new Apple("green", "4oz");
+
+Apple.prototype.eat = function(){
+    console.log("eaten " + this.color);
 }
 
-apple.prototype = {
-    eat() {console.log("eat"); return;},
-    toss() {console.log("eat"); return;}
-}
-
-let apple1 = {
-    color: "red",
-    weigth: "5oz"
-}
-
-
-let apple2 = {
-    color: "green",
-    weigth: "4oz"
-}
-
-
-let apple3 = {
-    color: "yellow",
-    weigth: "5oz"
+Apple.prototype.chop = function(){
+    console.log("chopped " + this.weight);
 }
 
 apple1.eat();
-apple2.color = "blue";
-apple3.weight = "1lb";
-
-console.log(apple1.eat());
-console.log(apple2.color);
-console.log(apple3.weight);
+apple2.chop();

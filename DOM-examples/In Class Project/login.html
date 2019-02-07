@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Example Pape</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="login.js"></script>
+    <style>
+        #message{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="mainHeader">Welcome to Revature</h1>
+
+    <h2 id="instruction">Please login:</h2>
+
+    <form method="GET" action="file:///Users/natashadickerman/Revature/revature/DOM-examples//In%20Class%20Project/welcome.html" onsubmit="validateForm(this);">
+        <label for="user">Username:</label>
+        <input type="text" id="user" placeholder="Username" required>
+
+        <label for="password">Username:</label>
+        <input type="password" id="password" placeholder="Password" required>
+
+        <div id="message">Password must contain atleast: <br>1 upper and 1 lower case letter, <br>1 number,
+            and 1 special character<br> and be atleast 8 characters in length.</div>
+
+        <input type="submit" id="submit">
+    </form>
+
+</body>
+<foot>
+
+</foot>
+
+</html>

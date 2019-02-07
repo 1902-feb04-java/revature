@@ -8,7 +8,7 @@ console.log(obj);
 
 
 let x = (
-    name: 'Bob';
+    name: "Bob"
 };
 
 
@@ -32,7 +32,7 @@ obj.sayName2;
 
 let obj2 = {
     name: 'Bob',
-    sayName2: obj.sayName2;
+    sayName2: obj.sayName2
 }
 obj2.sayName2();
 
@@ -44,7 +44,7 @@ function returns3(){
 }
 
 let theFunctionItself = returns3; // a function
-let theFunctionsReturnValue - returns3(); // 3
+let theFunctionsReturnValue = returns3(); // 3
 
 // ESS has no classes, but it does have constructors
 // we've used Boolean, String
@@ -132,3 +132,22 @@ console.log(student2);
 // ES6 classes are essentially just syntactic sugar around prototypal inheritance;
 // they are less flexible / more restrictive; have no shared prototypes; 
 // however, classes are a more structured way of programming (good development)
+
+
+
+
+// basic bubble class example
+
+class Bubble {
+
+    // constructor for a bubble class
+    constructor(x, y, r){
+        this.x = x;
+        this.y = y;
+        this.r = r;
+    }
+}
+
+// instances of a bubble class
+let bubble = new Bubble(200, 150, 40);
+let bubble2 = new Bubble(150, 100, 20);

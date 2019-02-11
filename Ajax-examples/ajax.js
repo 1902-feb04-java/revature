@@ -70,3 +70,40 @@ function getJoke(onSuccess, onFailure){
     // send the request
     xhr.send();
 }
+
+//  Fetch API, modern replacement for XMLHttpRequest object,
+// using ES6 promises, not all browsers support
+
+document.addEventListener('DOMContentLoaded', () => {
+    let button = document.getElementById("jokeButton-fetch");
+    let joke = document.getElementById("joke");
+
+    button.addEventListener('click', () => {
+
+        // certain functions return Promise objects
+        // these represent a result that's not here yet
+        // a promise can be resolved either to a success or a failure
+
+        // you call promise.then(onSuccess) to specify what to do when a promise is successfully fulfilled
+        // there's a second argument for failure
+        // or use a .catch to catch any errors on the way down
+
+        // if your then() function (ie callback with promises) returns a promise itself...
+        // we can chain taht with further "then()" calls
+
+        fetch("http://api.icndb.com/jokes/random")
+
+            // response.json() returns a promise of the whole response body parsed from json
+            // as soon as we get the response headers...
+            // chain to that promise
+            .then(response => response.json())
+            // when we get _that_value, process it onto the page
+            .then(data => {
+                joke.innerHTML = data.value.joke;
+            })
+            // using .catch() at the end of a promise chain will handle any errors along the way
+            .catch(err => {
+                console.log(err)
+            }
+    })
+})

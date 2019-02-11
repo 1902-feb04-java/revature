@@ -1,3 +1,7 @@
+// what is prototypal inheritance? 
+// inheritance between objects, not classes
+
+
 // Apple function - prototyping
 
 function Apple(color, weight){
@@ -18,3 +22,6 @@ Apple.prototype.chop = function(){
 
 apple1.eat();
 apple2.chop();
+
+
+// __proto__
